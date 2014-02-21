@@ -1,0 +1,86 @@
+" .vimrc File
+" Maintained by: Jeffrey Way
+" jeffrey@jeffrey-way.com
+" http://net.tutsplus.com
+"
+
+"Forget compatibility with Vi. Who cares.
+set nocompatible
+
+"Enable filetypes
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
+
+"Write the old file out when switching between files.
+set autowrite
+
+"Display current cursor position in lower right corner.
+set ruler
+
+"Ever notice a slight lag after typing the leader key + command? This lowers
+"the timeout.
+set timeoutlen=500
+
+"Switch between buffers without saving
+set hidden
+
+"Set the color scheme. Change this to your preference
+set background=dark
+colorscheme solarized
+
+"Tab stuff
+set tabstop=3
+set shiftwidth=3
+set softtabstop=3
+set expandtab
+
+""Show command in bottom right portion of the screen
+set showcmd
+
+"Show lines numbers
+set number
+
+"Indent stuff
+set smartindent
+set autoindent
+
+"Always show the status line
+set laststatus=2
+
+"Prefer a slightly higher line height
+"set linespace=3
+
+"Better line wrapping
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+
+"Set incremental searching"
+set incsearch
+
+""Highlight searching
+set hlsearch
+
+" case insensitive search
+set ignorecase
+set smartcase
+
+"Hard-wrap paragraphs of text
+nnoremap <leader>q gqip
+
+""Enable code folding
+set foldenable
+
+"Hide mouse when typing
+set mousehide
+
+" Source the vimrc file after saving it. This way, you don't have to reload
+" Vim to see the changes.
+if has("autocmd")
+ augroup myvimrchooks
+   au!
+   autocmd bufwritepost .vimrc source ~/.vimrc
+ augroup END
+endif
